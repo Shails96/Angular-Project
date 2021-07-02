@@ -1,0 +1,29 @@
+ <div class= "todos">
+	 <button (click)="sort()">Sort</button>
+	 <form >
+		 <input
+		 type="text"
+		 name="inputTodo"
+		 placeholder="Enter Todo..."
+		 class="todo-input"
+		 [(ngModel)]="inputTodo"
+		 >
+		 </form>
+		 <input type="button" value="Add Todo" class="todo-submit" (click)="addTodo()">
+
+ <div *ngFor="let todo of todos; let i = index;" class="todo {{ (todo.completed ? 'done' : '') }}" (click)="toggleComplete(todo.id)">
+
+  <div class= "id">{{ todo.id }}</div>
+  <div class= "content" >{{todo.title}}</div>
+  <button class= "delete" (click)="toggleDone(todo)">Remove</button>
+	</div>
+	</div>
+
+
+	<!--<div classs="todos">
+		<div class="todo" *ngFor="let todo of todos; let i = index;">
+			<div class="id">{{ i }}</div>
+			<div class ="content">{{todo.content}}</div>
+			<button class="delete" (click)="toggleDone(todo.id)">remove</button>
+	 </div>
+</div> -->
